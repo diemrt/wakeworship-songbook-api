@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Songbook.API\Songbook.API.csproj" />
+    <ProjectReference Include="..\Songbook.Domain\Songbook.Domain.csproj" />
+  </ItemGroup>
+</Project>
