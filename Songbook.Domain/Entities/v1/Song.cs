@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Songbook.Domain.Entities.v1
 {
-	public class SongInfo
+	public class Song
 	{
 		public Guid Id { get; set; }
 		public required string Title { get; set; }
