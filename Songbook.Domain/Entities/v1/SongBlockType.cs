@@ -6,6 +6,8 @@ namespace Songbook.Domain.Entities.v1
 	public class SongBlockType : BasicSetupType
 	{
 		public required string Id { get; set; }
+
+		public required ICollection<SongBlock> SongBlocks { get; set; }
 	}
 }
 
