@@ -25,11 +25,9 @@
   <ItemGroup>
     <None Remove="SchemaDefinitions\" />
     <None Remove="SchemaDefinitions\v1\" />
-    <None Remove="SchemaDefinitions\v1\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SchemaDefinitions\" />
     <Folder Include="SchemaDefinitions\v1\" />
-    <Folder Include="SchemaDefinitions\v1\Common\" />
   </ItemGroup>
 </Project>

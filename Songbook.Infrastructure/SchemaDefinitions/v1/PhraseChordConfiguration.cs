@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Songbook.Domain.Entities.v1;
-using Songbook.Infrastructure.SchemaDefinitions.v1.Common;
 
 namespace Songbook.Infrastructure.SchemaDefinitions.v1
 {

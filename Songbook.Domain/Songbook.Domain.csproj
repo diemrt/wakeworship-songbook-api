@@ -9,7 +9,6 @@
   <ItemGroup>
     <None Remove="Entities\" />
     <None Remove="Entities\v1\" />
-    <None Remove="Entities\v1\Common\" />
     <None Remove="Repositories\" />
     <None Remove="Repositories\v1\" />
     <None Remove="Repositories\v1\Common\" />
@@ -17,7 +16,6 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Entities\v1\" />
-    <Folder Include="Entities\v1\Common\" />
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\v1\" />
     <Folder Include="Repositories\v1\Common\" />
