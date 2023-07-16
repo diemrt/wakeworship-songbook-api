@@ -12,6 +12,9 @@
     <None Remove="Repositories\" />
     <None Remove="Repositories\v1\" />
     <None Remove="Repositories\v1\Common\" />
+    <None Remove="Response\" />
+    <None Remove="Response\v1\" />
+    <None Remove="Response\v1\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -19,5 +22,8 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\v1\" />
     <Folder Include="Repositories\v1\Common\" />
+    <Folder Include="Response\" />
+    <Folder Include="Response\v1\" />
+    <Folder Include="Response\v1\Common\" />
   </ItemGroup>
 </Project>

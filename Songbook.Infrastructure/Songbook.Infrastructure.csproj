@@ -25,9 +25,15 @@
   <ItemGroup>
     <None Remove="SchemaDefinitions\" />
     <None Remove="SchemaDefinitions\v1\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\v1\" />
+    <None Remove="Repositories\v1\Common\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SchemaDefinitions\" />
     <Folder Include="SchemaDefinitions\v1\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\v1\" />
+    <Folder Include="Repositories\v1\Common\" />
   </ItemGroup>
 </Project>
