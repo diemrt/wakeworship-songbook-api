@@ -6,9 +6,9 @@ namespace Songbook.API.Extensions
 {
     public static class DatabaseExtension
     {
-        public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration, string environment)
+        public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetSection(environment).GetConnectionString("SongbookDb");
+            var connectionString = configuration.GetConnectionString("SongbookDb");
             services
                 .AddEntityFrameworkSqlServer()
                 .AddDbContextPool<SongbookContext>(contextOptions =>
