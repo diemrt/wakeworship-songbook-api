@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using Songbook.Infrastructure;
 
 namespace Songbook.API.Extensions
 {
