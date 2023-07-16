@@ -403,3 +403,8 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+.Songbook.Domain/obj
+.Songbook.Domain/bin
+Songbook.Infrastructure/bon
+Songbook.Infrastructure/obj
