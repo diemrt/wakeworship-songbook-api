@@ -22,4 +22,14 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="SchemaDefinitions\" />
+    <None Remove="SchemaDefinitions\v1\" />
+    <None Remove="SchemaDefinitions\v1\Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SchemaDefinitions\" />
+    <Folder Include="SchemaDefinitions\v1\" />
+    <Folder Include="SchemaDefinitions\v1\Common\" />
+  </ItemGroup>
 </Project>

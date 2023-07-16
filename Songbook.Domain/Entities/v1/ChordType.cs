@@ -8,6 +8,7 @@ namespace Songbook.Domain.Entities.v1
 		public required string Id { get; set; }
 
 		public required ICollection<PhraseChord> PhraseChords { get; set; }
-	}
+        public required ICollection<Song> Songs { get; set; }
+    }
 }
 
