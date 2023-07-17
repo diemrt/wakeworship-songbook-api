@@ -4,8 +4,9 @@ using Songbook.Domain.Repositories.v1.Common;
 
 namespace Songbook.Domain.Repositories.v1
 {
-	public interface IChordTypeRepository : IGenericRepo<ChordType>
+    public interface IChordTypeRepository : IGenericRepo<ChordType>
     {
-	}
+        Task<IEnumerable<ChordType>> GetAllAsync();
+    }
 }
 

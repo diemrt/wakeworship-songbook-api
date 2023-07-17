@@ -7,19 +7,17 @@
     <UserSecretsId>bc4b7ab1-8433-4500-89e3-6fbe3cd70315</UserSecretsId>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <ItemGroup>
     <None Remove="Extensions\" />
     <None Remove="Controllers\" />
-    <None Remove="Controllers\v1\" />
     <None Remove="Middlewares\" />
     <None Remove="Middlewares\v1\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Controllers\v1\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Middlewares\v1\" />
   </ItemGroup>
@@ -39,5 +37,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
   </ItemGroup>
 </Project>

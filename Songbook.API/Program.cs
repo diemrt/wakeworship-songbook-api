@@ -6,9 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddDatabase(builder.Configuration);
-builder.Services.AddServices();
 builder.Services.AddRepositories();
+builder.Services.AddVersioning();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetFormItemsQuery>());
 
 //Automapper

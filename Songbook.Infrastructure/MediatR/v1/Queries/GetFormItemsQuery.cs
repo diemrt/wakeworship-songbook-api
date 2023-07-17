@@ -1,6 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using MediatR;
+using Songbook.Domain.Entities.v1;
 using Songbook.Domain.Repositories.v1;
 using Songbook.Domain.Response.v1;
 using Songbook.Domain.Response.v1.Common;
@@ -34,8 +35,8 @@ namespace Songbook.Infrastructure.MediatR.v1.Queries
         public async Task<GenericResponse<GetFormItemsResponse>> Handle(GetFormItemsQuery request, CancellationToken cancellationToken)
         {
             var result = new GenericResponse<GetFormItemsResponse>() { Data = new GetFormItemsResponse() };
-            var chordTypes = await _chordTypeRepository.GetAllAsync();
-            var songBlockTypes = await _songBlockTypeRepository.GetAllAsync();
+            IEnumerable<ChordType> chordTypes = await _chordTypeRepository.GetAllAsync();
+            IEnumerable<SongBlockType> songBlockTypes = await _songBlockTypeRepository.GetAllAsync();
 
             result.Data.ChordTypeItems = _mapper.Map<IEnumerable<GenericItemResponse<string>>>(chordTypes);
             result.Data.SongBlockItems = _mapper.Map<IEnumerable<GenericItemResponse<string>>>(songBlockTypes);

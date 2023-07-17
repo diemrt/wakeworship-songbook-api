@@ -4,8 +4,9 @@ using Songbook.Domain.Repositories.v1.Common;
 
 namespace Songbook.Domain.Repositories.v1
 {
-	public interface ISongBlockTypeRepository : IGenericRepo<SongBlockType>
+    public interface ISongBlockTypeRepository : IGenericRepo<SongBlockType>
     {
-	}
+        Task<IEnumerable<SongBlockType>> GetAllAsync();
+    }
 }
 
