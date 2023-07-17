@@ -3,7 +3,7 @@ namespace Songbook.Domain.Response.v1.Common
 {
     public class GenericResponse<T>
     {
-        public required T Data { get; set; }
+        public T? Data { get; set; }
     }
 
     public class GenericCollectionResponse<T>

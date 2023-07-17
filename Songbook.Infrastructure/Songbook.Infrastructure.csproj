@@ -21,6 +21,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="SchemaDefinitions\" />
@@ -28,6 +32,9 @@
     <None Remove="Repositories\" />
     <None Remove="Repositories\v1\" />
     <None Remove="Repositories\v1\Common\" />
+    <None Remove="MediatR\" />
+    <None Remove="MediatR\v1\" />
+    <None Remove="MediatR\v1\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SchemaDefinitions\" />
@@ -35,5 +42,8 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\v1\" />
     <Folder Include="Repositories\v1\Common\" />
+    <Folder Include="MediatR\" />
+    <Folder Include="MediatR\v1\" />
+    <Folder Include="MediatR\v1\Queries\" />
   </ItemGroup>
 </Project>

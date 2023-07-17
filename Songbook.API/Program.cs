@@ -1,4 +1,5 @@
 ﻿using Songbook.API.Extensions;
+using Songbook.Infrastructure.MediatR.v1.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +9,21 @@ builder.Services.AddControllers();
 builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddServices();
 builder.Services.AddRepositories();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetFormItemsQuery>());
+
+//Automapper
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseErrorMiddleware();
 
 // Configure the HTTP request pipeline.
 

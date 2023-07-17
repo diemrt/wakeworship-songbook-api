@@ -35,6 +35,15 @@ namespace Songbook.Infrastructure.Repositories.v1.Common
             return item != null;
         }
 
+        public async virtual Task<IEnumerable<T>> GetAllAsync()
+        {
+            var item = await _context.Set<T>().AsNoTracking().ToListAsync();
+
+            _context.Entry(item).State = EntityState.Detached;
+
+            return item;
+        }
+
         public async virtual Task<T> GetByIdAsync(int id)
         {
             var item = await _context.Set<T>().FindAsync(id);

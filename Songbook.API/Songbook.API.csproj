@@ -12,10 +12,16 @@
   <ItemGroup>
     <None Remove="Extensions\" />
     <None Remove="Controllers\" />
+    <None Remove="Controllers\v1\" />
+    <None Remove="Middlewares\" />
+    <None Remove="Middlewares\v1\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Controllers\v1\" />
+    <Folder Include="Middlewares\" />
+    <Folder Include="Middlewares\v1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Songbook.Infrastructure\Songbook.Infrastructure.csproj">
@@ -30,5 +36,8 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
   </ItemGroup>
 </Project>
