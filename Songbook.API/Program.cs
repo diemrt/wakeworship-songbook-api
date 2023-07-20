@@ -10,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCorsExtension();
 builder.Services.AddDatabase(builder.Configuration);
+builder.Services.AddServices();
 builder.Services.AddRepositories();
 builder.Services.AddVersioning();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetFormItemsQuery>());

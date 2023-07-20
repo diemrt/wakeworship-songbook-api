@@ -35,6 +35,9 @@
     <None Remove="MediatR\" />
     <None Remove="MediatR\v1\" />
     <None Remove="MediatR\v1\Queries\" />
+    <None Remove="Services\" />
+    <None Remove="Services\v1\" />
+    <None Remove="Services\v1\Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SchemaDefinitions\" />
@@ -45,5 +48,8 @@
     <Folder Include="MediatR\" />
     <Folder Include="MediatR\v1\" />
     <Folder Include="MediatR\v1\Queries\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\v1\" />
+    <Folder Include="Services\v1\Utils\" />
   </ItemGroup>
 </Project>
