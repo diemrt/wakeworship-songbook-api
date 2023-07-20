@@ -20,6 +20,8 @@
     <None Remove="Exceptions\" />
     <None Remove="Exceptions\v1\" />
     <None Remove="Exceptions\v1\Common\" />
+    <None Remove="Requests\" />
+    <None Remove="Requests\v1\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -35,6 +37,8 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Exceptions\v1\" />
     <Folder Include="Exceptions\v1\Common\" />
+    <Folder Include="Requests\" />
+    <Folder Include="Requests\v1\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
