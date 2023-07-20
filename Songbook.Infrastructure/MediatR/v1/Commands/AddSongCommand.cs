@@ -39,7 +39,7 @@ namespace Songbook.Infrastructure.MediatR.v1.Commands
 
         private async Task<Guid> CreateSongEntityAsync(AddSongCommand request)
         {
-            Domain.Entities.v1.Song song = _mapper.Map<Domain.Entities.v1.Song>(request);
+            Domain.Entities.v1.Song song = _mapper.Map<Domain.Entities.v1.Song>(request.Request);
             var addSong = _songRepository.Create(song);
             await _songRepository.UnitOfWork.SaveChangesAsync();
             return addSong.Id;

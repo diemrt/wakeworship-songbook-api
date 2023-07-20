@@ -12,6 +12,7 @@ namespace Songbook.Domain.Mappers.v1
 		{
             CreateMap<AddEditSongRequest, Song>()
                 .ForMember(m => m.Key, opt => opt.MapFrom(src => src.Key.Value))
+                .ForMember(m => m.Capo, opt => opt.MapFrom(src => !string.IsNullOrEmpty(src.Capo) ? int.Parse(src.Capo) : 0 ))
                 ;
         }
 	}

@@ -9,11 +9,11 @@ namespace Songbook.API.Controllers
     [ApiVersion("1.0")]
     [ApiController]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public class PriceListsController : ControllerBase
+    public class FormItemsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public PriceListsController(IMediator mediator)
+        public FormItemsController(IMediator mediator)
         {
             this._mediator = mediator;
         }

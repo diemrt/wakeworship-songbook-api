@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Songbook.Domain.Requests.v1;
+using Songbook.Infrastructure.MediatR.v1.Commands;
 
 namespace Songbook.API.Controllers
 {
