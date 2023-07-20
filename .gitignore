@@ -408,3 +408,5 @@ ASALocalRun/
 .Songbook.Domain/bin
 Songbook.Infrastructure/bon
 Songbook.Infrastructure/obj
+Songbook.Infrastructure.Test/bon
+Songbook.Infrastructure.Test/obj
