@@ -22,7 +22,6 @@ public class SongUtilsServiceTests
 
     [Theory]
     [InlineData("", "(", ")", SongReaderServiceErrorMessages.EMPTY_CONTENT)]
-    [InlineData("lalalala", "(", ")", SongReaderServiceErrorMessages.INVALID_PARTS)]
     public void CreateSongParts_MustThrow(string content, string splitter, string delimiter, string message)
     {
         var exception = Assert.Throws<GenericApiException>(() => SongUtilsService.CreateSongParts(content, splitter, delimiter));

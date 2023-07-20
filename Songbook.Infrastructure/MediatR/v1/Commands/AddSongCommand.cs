@@ -9,6 +9,7 @@ using Songbook.Domain.Repositories.v1;
 using Songbook.Domain.Requests.v1;
 using Songbook.Domain.Response.v1.Common;
 using Songbook.Domain.Services.v1;
+using Songbook.Infrastructure.Services.v1.Utils;
 
 namespace Songbook.Infrastructure.MediatR.v1.Commands
 {
@@ -41,13 +42,27 @@ namespace Songbook.Infrastructure.MediatR.v1.Commands
 
         public async Task<GenericResponse<Guid>> Handle(AddSongCommand request, CancellationToken cancellationToken)
         {
-            Guid song = await CreateSongEntityAsync(request);
-            return new GenericResponse<Guid>() { Data = song };
+            Guid songId = await CreateSongEntityAsync(request);
+            await CreateSongContentAsync(songId, request.Request.Content);
+            return new GenericResponse<Guid>() { Data = songId };
+        }
+
+        private async Task CreateSongContentAsync(Guid songId, string content)
+        {
+            var deserializedSongBlocks = SongUtilsService.CreateSongParts(content, "(", ")");
+            foreach (var deserialized in deserializedSongBlocks.Select((value, i) => new { i, value }))
+            {
+                var songBlock = _mapper.Map<Domain.Entities.v1.SongBlock>(songId);
+                songBlock.PositionInSong = deserialized.i;
+                songBlock.SongBlockTypeId = deserialized.value.BeforeDelimiter ?? "";
+#warning Ultimare la creazione del metodo!
+            }
+            throw new NotImplementedException();
         }
 
         private async Task<Guid> CreateSongEntityAsync(AddSongCommand request)
         {
-            Domain.Entities.v1.Song song = _mapper.Map<Domain.Entities.v1.Song>(request.Request);
+            var song = _mapper.Map<Domain.Entities.v1.Song>(request.Request);
             var addSong = _songRepository.Create(song);
             await _songRepository.UnitOfWork.SaveChangesAsync();
             return addSong.Id;
