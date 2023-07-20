@@ -25,6 +25,8 @@
     <None Remove="Exceptions\v1\Messages\" />
     <None Remove="Services\" />
     <None Remove="Services\v1\" />
+    <None Remove="DTOs\" />
+    <None Remove="DTOs\v1\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -45,6 +47,9 @@
     <Folder Include="Exceptions\v1\Messages\" />
     <Folder Include="Services\" />
     <Folder Include="Services\v1\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="DTOs\v1\" />
+    <Folder Include="DTOs\v1\Songs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

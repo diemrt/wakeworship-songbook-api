@@ -21,6 +21,7 @@ namespace Songbook.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Add([FromBody] AddEditSongRequest request)
         {
             var result = await _mediator.Send(new AddSongCommand(request));

@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Net;
 using AutoMapper;
 using MediatR;
+using Songbook.Domain.DTOs.v1.Songs;
+using Songbook.Domain.Exceptions.v1.Common;
+using Songbook.Domain.Exceptions.v1.Messages;
 using Songbook.Domain.Repositories.v1;
 using Songbook.Domain.Requests.v1;
 using Songbook.Domain.Response.v1.Common;
+using Songbook.Domain.Services.v1;
 
 namespace Songbook.Infrastructure.MediatR.v1.Commands
 {
@@ -21,14 +26,17 @@ namespace Songbook.Infrastructure.MediatR.v1.Commands
     {
         private readonly IMapper _mapper;
         private readonly ISongRepository _songRepository;
+        private readonly ISongService _songService;
 
         public AddSongCommandHandler(
             IMapper mapper,
-            ISongRepository songRepository
+            ISongRepository songRepository,
+            ISongService songService
             )
         {
             this._mapper = mapper;
             this._songRepository = songRepository;
+            this._songService = songService;
         }
 
         public async Task<GenericResponse<Guid>> Handle(AddSongCommand request, CancellationToken cancellationToken)
