@@ -16,6 +16,7 @@ namespace Songbook.API.Extensions
         private static IServiceCollection AddV1Repositories(this IServiceCollection services) => services
             .AddTransient<Domain.Repositories.v1.IChordTypeRepository, Infrastructure.Repositories.v1.ChordTypeRepository>()
             .AddTransient<Domain.Repositories.v1.ISongBlockTypeRepository, Infrastructure.Repositories.v1.SongBlockTypeRepository>()
+            .AddTransient<Domain.Repositories.v1.ISongRepository, Infrastructure.Repositories.v1.SongRepository>()
             ;
     }
 }

@@ -8,6 +8,7 @@ namespace Songbook.API.Controllers
     [Route("api/v{version:apiVersion}/form-items")]
     [ApiVersion("1.0")]
     [ApiController]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public class PriceListsController : ControllerBase
     {
         private readonly IMediator _mediator;
