@@ -30,6 +30,11 @@ namespace Songbook.Infrastructure.SchemaDefinitions.v1
                 .HasMaxLength(128)
                 .IsRequired();
 
+            builder.Property(p => p.Content)
+                .HasColumnName("content")
+                .HasColumnType("nvarchar(MAX)")
+                .IsRequired();
+
             builder.Property(p => p.Key)
                 .HasColumnName("key")
                 .HasColumnType("nvarchar(16)")
