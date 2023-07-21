@@ -90,19 +90,25 @@ namespace Songbook.Infrastructure.Services.v1
             }
         }
 
-        public string CreateContentPreview(ICollection<SongBlock> songBlocks)
+        public string? CreateContentPreview(ICollection<SongBlock> songBlocks)
         {
-            var phrases = songBlocks
-                .SelectMany(s => s.SongRows)
-                .SelectMany(s => s.PhraseChords)
-                .Where(p => !string.IsNullOrEmpty(p.Phrase))
-                .ToList()
-                ;
-            var phrase = string.Join(" ", phrases.Select(s => s.Phrase));
+            string phrase = "";
+            foreach (var block in songBlocks.OrderBy(k => k.PositionInSong))
+            {
+                foreach (var row in block.SongRows.OrderBy(k => k.PositionInBlock))
+                {
+                    foreach (var phraseChord in row.PhraseChords.OrderBy(k => k.PositionInRow))
+                    {
+                        phrase += phraseChord.Phrase;
+                    }
+                    phrase += " ";
+                }
+            }
+
             RegexOptions options = RegexOptions.None;
             Regex regex = new Regex("[ ]{2,}", options);
             phrase = regex.Replace(phrase, " ");
-            return phrase;
+            return phrase.Truncate(40);
         }
     }
 }

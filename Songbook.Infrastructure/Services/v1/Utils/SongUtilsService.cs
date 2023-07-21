@@ -43,6 +43,13 @@ namespace Songbook.Infrastructure.Services.v1.Utils
             result.BeforeDelimiter = subpart[0];
             return result;
         }
+
+        public static string? Truncate(this string? value, int maxLength, string truncationSuffix = "…")
+        {
+            return value?.Length > maxLength
+                ? value.Substring(0, maxLength) + truncationSuffix
+                : value;
+        }
     }
 }
 

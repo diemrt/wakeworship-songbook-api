@@ -7,7 +7,7 @@ namespace Songbook.Domain.Response.v1.Songs
 		public required string Title { get; set; }
 		public required string Key { get; set; }
 		public required string Capo { get; set; }
-		public required string ContentPreview { get; set; }
+		public string? ContentPreview { get; set; }
 	}
 }
 

@@ -14,6 +14,8 @@ namespace Songbook.Domain.Mappers.v1
             #region GetAllSongsQuery
             CreateMap<Song, GetAllSongsResponse>()
                 .ForMember(m => m.SongId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(m => m.Key, opt => opt.MapFrom(src => src.ChordType.DisplayName))
+                .ForMember(m => m.Capo, opt => opt.MapFrom(src => src.Capo == null || src.Capo == 0 ? "No" : $"{src.Capo}th"))
                 ;
             #endregion
 
@@ -33,6 +35,7 @@ namespace Songbook.Domain.Mappers.v1
                 ;
             #endregion
         }
-	}
+
+    }
 }
 

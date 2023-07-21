@@ -16,6 +16,7 @@ namespace Songbook.Infrastructure.Repositories.v1
         {
             var result = await _context.Songs
                 .AsNoTracking()
+                .Include(t => t.ChordType)
                 .Include(t => t.SongBlocks)
                 .ThenInclude(t => t.SongRows)
                 .ThenInclude(t => t.PhraseChords)

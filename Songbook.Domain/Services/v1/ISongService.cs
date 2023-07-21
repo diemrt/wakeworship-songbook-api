@@ -6,7 +6,7 @@ namespace Songbook.Domain.Services.v1
 {
     public interface ISongService
     {
-        string CreateContentPreview(ICollection<SongBlock> songBlocks);
+        string? CreateContentPreview(ICollection<SongBlock> songBlocks);
         Task CreateSongContentAsync(Guid songId, string content);
     }
 }
