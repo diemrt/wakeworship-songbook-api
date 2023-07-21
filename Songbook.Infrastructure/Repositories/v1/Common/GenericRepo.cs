@@ -46,7 +46,7 @@ namespace Songbook.Infrastructure.Repositories.v1.Common
             return item;
         }
 
-        public async virtual Task<T> GetByIdAsync(Guid id)
+        public async virtual Task<T?> GetByIdAsync(Guid id)
         {
             var item = await _context.Set<T>().FindAsync(id);
 

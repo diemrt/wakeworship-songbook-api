@@ -16,12 +16,23 @@ namespace Songbook.Infrastructure.Repositories.v1
         {
             var result = await _context.Songs
                 .AsNoTracking()
-                .Include(t => t.ChordType)
                 .Include(t => t.SongBlocks)
                 .ThenInclude(t => t.SongRows)
                 .ThenInclude(t => t.PhraseChords)
                 .OrderBy(k => k.Title)
                 .ToListAsync();
+
+            return result;
+        }
+
+        public override async Task<Song?> GetByIdAsync(Guid id)
+        {
+            var result = await _context.Songs
+                .AsNoTracking()
+                .Include(t => t.SongBlocks)
+                .ThenInclude(t => t.SongRows)
+                .ThenInclude(t => t.PhraseChords)
+                .FirstOrDefaultAsync();
 
             return result;
         }
