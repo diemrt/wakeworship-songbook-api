@@ -28,36 +28,26 @@ namespace Songbook.Infrastructure.MediatR.v1.Commands
         private readonly IMapper _mapper;
         private readonly ISongRepository _songRepository;
         private readonly ISongService _songService;
+        private readonly ISongBlockRepository _songBlockRepository;
 
         public AddSongCommandHandler(
             IMapper mapper,
             ISongRepository songRepository,
-            ISongService songService
+            ISongService songService,
+            ISongBlockRepository songBlockRepository
             )
         {
             this._mapper = mapper;
             this._songRepository = songRepository;
             this._songService = songService;
+            this._songBlockRepository = songBlockRepository;
         }
 
         public async Task<GenericResponse<Guid>> Handle(AddSongCommand request, CancellationToken cancellationToken)
         {
             Guid songId = await CreateSongEntityAsync(request);
-            await CreateSongContentAsync(songId, request.Request.Content);
+            await _songService.CreateSongContentAsync(songId, request.Request.Content);
             return new GenericResponse<Guid>() { Data = songId };
-        }
-
-        private async Task CreateSongContentAsync(Guid songId, string content)
-        {
-            var deserializedSongBlocks = SongUtilsService.CreateSongParts(content, "(", ")");
-            foreach (var deserialized in deserializedSongBlocks.Select((value, i) => new { i, value }))
-            {
-                var songBlock = _mapper.Map<Domain.Entities.v1.SongBlock>(songId);
-                songBlock.PositionInSong = deserialized.i;
-                songBlock.SongBlockTypeId = deserialized.value.BeforeDelimiter ?? "";
-#warning Ultimare la creazione del metodo!
-            }
-            throw new NotImplementedException();
         }
 
         private async Task<Guid> CreateSongEntityAsync(AddSongCommand request)

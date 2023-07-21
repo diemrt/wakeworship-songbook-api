@@ -5,6 +5,7 @@ namespace Songbook.Domain.Services.v1
 {
     public interface ISongService
     {
+        Task CreateSongContentAsync(Guid songId, string content);
     }
 }
 
