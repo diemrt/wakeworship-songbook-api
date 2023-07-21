@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Text.RegularExpressions;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Songbook.Domain.DTOs.v1.Songs;
 using Songbook.Domain.Entities.v1;
 using Songbook.Domain.Exceptions.v1.Common;
@@ -86,6 +88,21 @@ namespace Songbook.Infrastructure.Services.v1
                 var addEntity = phraseChordRepository.Create(entity);
                 await phraseChordRepository.UnitOfWork.SaveChangesAsync();
             }
+        }
+
+        public string CreateContentPreview(ICollection<SongBlock> songBlocks)
+        {
+            var phrases = songBlocks
+                .SelectMany(s => s.SongRows)
+                .SelectMany(s => s.PhraseChords)
+                .Where(p => !string.IsNullOrEmpty(p.Phrase))
+                .ToList()
+                ;
+            var phrase = string.Join(" ", phrases.Select(s => s.Phrase));
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex("[ ]{2,}", options);
+            phrase = regex.Replace(phrase, " ");
+            return phrase;
         }
     }
 }

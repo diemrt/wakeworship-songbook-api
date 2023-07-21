@@ -6,6 +6,8 @@ namespace Songbook.Domain.Repositories.v1
 {
 	public interface ISongRepository : IGenericRepo<Song>
 	{
-	}
+        Task<IEnumerable<Song>> GetAllAsync();
+
+    }
 }
 

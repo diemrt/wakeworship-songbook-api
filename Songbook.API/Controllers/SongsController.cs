@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Songbook.Domain.Requests.v1;
 using Songbook.Infrastructure.MediatR.v1.Commands;
+using Songbook.Infrastructure.MediatR.v1.Queries.Songs;
 
 namespace Songbook.API.Controllers
 {
@@ -17,6 +18,14 @@ namespace Songbook.API.Controllers
         public SongsController(IMediator mediator)
         {
             this._mediator = mediator;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _mediator.Send(new GetAllSongsQuery());
+            return Ok(result);
         }
 
         [HttpPost]

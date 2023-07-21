@@ -27,6 +27,7 @@
     <None Remove="Services\v1\" />
     <None Remove="DTOs\" />
     <None Remove="DTOs\v1\" />
+    <None Remove="Response\v1\Songs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entities\" />
@@ -50,6 +51,7 @@
     <Folder Include="DTOs\" />
     <Folder Include="DTOs\v1\" />
     <Folder Include="DTOs\v1\Songs\" />
+    <Folder Include="Response\v1\Songs\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

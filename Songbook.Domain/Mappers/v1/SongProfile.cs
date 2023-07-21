@@ -3,6 +3,7 @@ using AutoMapper;
 using Songbook.Domain.Entities.v1;
 using Songbook.Domain.Requests.v1;
 using Songbook.Domain.Response.v1.Common;
+using Songbook.Domain.Response.v1.Songs;
 
 namespace Songbook.Domain.Mappers.v1
 {
@@ -10,6 +11,12 @@ namespace Songbook.Domain.Mappers.v1
 	{
 		public SongProfile()
         {
+            #region GetAllSongsQuery
+            CreateMap<Song, GetAllSongsResponse>()
+                .ForMember(m => m.SongId, opt => opt.MapFrom(src => src.Id))
+                ;
+            #endregion
+
             #region AddSongCommand
             CreateMap<AddEditSongRequest, Song>()
                 .ForMember(m => m.Key, opt => opt.MapFrom(src => src.Key.Value))
