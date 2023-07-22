@@ -64,12 +64,6 @@ namespace Songbook.Domain.Mappers.v1
                     Value = src.ChordTypeId
                 }))
                 ;
-
-            //CreateMap<SongBlock, GetSongByIdSongBlockResponse>()
-            //    .ForMember(m => m.SongBlockId, opt => opt.MapFrom(src => src.Id))
-            //    .ForMember(m => m.SongBlockTypeItem, opt => opt.Ignore())
-            //    .ForMember(m => m.SongRows, opt => opt.Ignore())
-            //    ;
             #endregion
         }
 
