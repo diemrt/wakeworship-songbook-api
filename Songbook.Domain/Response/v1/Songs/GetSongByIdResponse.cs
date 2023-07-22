@@ -7,22 +7,22 @@ namespace Songbook.Domain.Response.v1.Songs
 	{
         public Guid SongId { get; set; }
         public string? Title { get; set; }
-        public string? Key { get; set; }
+        public GenericItemResponse<string>? Key { get; set; }
         public string? Capo { get; set; }
-        public IEnumerable<GetSongByIdSongBlockResponse>? SongBlocks { get; set; }
+        public required ICollection<GetSongByIdSongBlockResponse> SongBlocks { get; set; }
     }
 
     public class GetSongByIdSongBlockResponse
     {
         public Guid SongBlockId { get; set; }
         public GenericItemResponse<string>? SongBlockTypeItem { get; set; }
-        public IEnumerable<GetSongByIdSongRowResponse>? SongRows { get; set; }
+        public required ICollection<GetSongByIdSongRowResponse> SongRows { get; set; }
     }
 
     public class GetSongByIdSongRowResponse
     {
         public Guid SongRowId { get; set; }
-        public IEnumerable<GetSongByIdPhraseChordResponse>? SongBlocks { get; set; }
+        public required ICollection<GetSongByIdPhraseChordResponse> PhraseChords { get; set; }
     }
 
     public class GetSongByIdPhraseChordResponse

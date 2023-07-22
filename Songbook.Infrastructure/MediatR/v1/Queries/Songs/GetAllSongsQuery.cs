@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Net;
 using AutoMapper;
 using MediatR;
+using Songbook.Domain.Exceptions.v1.Common;
+using Songbook.Domain.Exceptions.v1.Messages;
 using Songbook.Domain.Repositories.v1;
 using Songbook.Domain.Response.v1.Common;
 using Songbook.Domain.Response.v1.Songs;
@@ -43,7 +46,7 @@ namespace Songbook.Infrastructure.MediatR.v1.Queries.Songs
             foreach (var song in songs)
             {
                 var songResponse = mapper.Map<GetAllSongsResponse>(song);
-                songResponse.Key = (await chordTypeRepository.GetByIdAsync(song.Key)).DisplayName;
+
                 songResponse.ContentPreview = songService.CreateContentPreview(song.SongBlocks);
                 result.Data.Add(songResponse);
             }
