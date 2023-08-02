@@ -32,14 +32,8 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Entities\v1\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\v1\" />
     <Folder Include="Repositories\v1\Common\" />
-    <Folder Include="Response\" />
-    <Folder Include="Response\v1\" />
     <Folder Include="Response\v1\Common\" />
-    <Folder Include="Mappers\" />
-    <Folder Include="Mappers\v1\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Exceptions\v1\" />
     <Folder Include="Exceptions\v1\Common\" />

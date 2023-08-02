@@ -15,6 +15,7 @@ namespace Songbook.Infrastructure
         public DbSet<SongBlock> SongBlocks { get; set; }
         public DbSet<SongBlockType> SongBlockTypes { get; set; }
         public DbSet<SongRow> SongRows { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public SongbookContext(DbContextOptions<SongbookContext> opt) : base(opt)
         {

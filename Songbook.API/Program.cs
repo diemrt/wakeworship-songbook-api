@@ -13,6 +13,7 @@ builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddServices();
 builder.Services.AddRepositories();
 builder.Services.AddVersioning();
+builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetFormItemsQuery>());
 
 //Automapper
@@ -33,6 +34,7 @@ app.UseErrorMiddleware();
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -20,6 +20,7 @@ namespace Songbook.API.Extensions
             .AddTransient<Domain.Repositories.v1.ISongBlockRepository, Infrastructure.Repositories.v1.SongBlockRepository>()
             .AddTransient<Domain.Repositories.v1.ISongRowRepository, Infrastructure.Repositories.v1.SongRowRepository>()
             .AddTransient<Domain.Repositories.v1.IPhraseChordRepository, Infrastructure.Repositories.v1.PhraseChordRepository>()
+            .AddTransient<Domain.Repositories.v1.IUserRepository, Infrastructure.Repositories.v1.UserRepository>()
             ;
     }
 }

@@ -44,12 +44,7 @@
   <ItemGroup>
     <Folder Include="SchemaDefinitions\" />
     <Folder Include="SchemaDefinitions\v1\" />
-    <Folder Include="Repositories\" />
-    <Folder Include="Repositories\v1\" />
     <Folder Include="Repositories\v1\Common\" />
-    <Folder Include="MediatR\" />
-    <Folder Include="MediatR\v1\" />
-    <Folder Include="MediatR\v1\Queries\" />
     <Folder Include="Services\" />
     <Folder Include="Services\v1\" />
     <Folder Include="Services\v1\Utils\" />

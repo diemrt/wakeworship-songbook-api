@@ -1,5 +1,6 @@
 ﻿using System;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Songbook.Domain.Requests.v1;
 using Songbook.Infrastructure.MediatR.v1.Commands;
@@ -7,6 +8,7 @@ using Songbook.Infrastructure.MediatR.v1.Queries.Songs;
 
 namespace Songbook.API.Controllers
 {
+    [Authorize]
     [Route("api/v{version:apiVersion}/songs")]
     [ApiVersion("1.0")]
     [ApiController]
