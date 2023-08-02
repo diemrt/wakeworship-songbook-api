@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Songbook.Domain.Exceptions.v1.Common;
 using Songbook.Domain.Response.v1.Common;
+using Songbook.Infrastructure.MediatR.v1.Queries.Users;
 
 namespace Songbook.API.Controllers
 {

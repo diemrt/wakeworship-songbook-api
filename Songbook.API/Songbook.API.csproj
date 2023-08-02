@@ -16,7 +16,6 @@
     <None Remove="Middlewares\v1\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Middlewares\v1\" />
   </ItemGroup>
